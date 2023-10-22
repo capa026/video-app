@@ -6,8 +6,13 @@ import { fetchFromAPI } from '../utils/fetchFromAPI';
 
 const Feed = () => {
   const [selectedCategory, setSelectedCategory] = useState('New');
+  const [videos, setVideos] = useState([]);
   useEffect(() => {
-    fetchFromAPI(`search?part=snippet&q=${selectedCategory}`);
+    fetchFromAPI(`search?part=snippet,id&q=${selectedCategory}`).then(
+      (data) => {
+        setVideos(data.items);
+      }
+    );
   }, [selectedCategory]);
 
   return (
@@ -47,7 +52,7 @@ const Feed = () => {
         </Typography>
       </Box>
 
-      <Videos video={[]} />
+      <Videos video={videos} />
     </Stack>
   );
 };
