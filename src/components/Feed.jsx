@@ -1,7 +1,12 @@
 import { useEffect, useState } from 'react';
 import { Box, Stack, Typography } from '@mui/material';
-import { SideBar } from '../components';
+import { SideBar, Videos } from '../components';
+import { fetchFromAPI } from '../utils/fetchFromAPI';
 const Feed = () => {
+  useEffect(() => {
+    //fetchFromAPI();
+    console.log(1);
+  }, []);
   return (
     <Stack
       sx={{
@@ -35,6 +40,8 @@ const Feed = () => {
           New <span style={{ color: '#F31503' }}>videos</span>
         </Typography>
       </Box>
+
+      <Videos video={[]} />
     </Stack>
   );
 };
