@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Box, Stack, Typography } from '@mui/material';
-import { SideBar, Videos } from '../components';
+import { SideBar, Videos } from './';
 
 import { fetchFromAPI } from '../utils/fetchFromAPI';
 
@@ -50,9 +50,8 @@ const Feed = () => {
         >
           {selectedCategory} <span style={{ color: '#F31503' }}>videos</span>
         </Typography>
+        <Videos videos={videos} />
       </Box>
-
-      <Videos videos={videos} />
     </Stack>
   );
 };
