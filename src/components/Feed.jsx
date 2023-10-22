@@ -1,12 +1,14 @@
 import { useEffect, useState } from 'react';
 import { Box, Stack, Typography } from '@mui/material';
 import { SideBar, Videos } from '../components';
+
 import { fetchFromAPI } from '../utils/fetchFromAPI';
+
 const Feed = () => {
   useEffect(() => {
-    //fetchFromAPI();
-    console.log(1);
+    fetchFromAPI();
   }, []);
+
   return (
     <Stack
       sx={{
