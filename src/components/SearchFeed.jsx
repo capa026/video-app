@@ -9,7 +9,7 @@ const SearchFeed = () => {
   const { searchTerm } = useParams();
 
   useEffect(() => {
-    fetchFromAPI(`search?part=snippet,id&q=`).then((data) => {
+    fetchFromAPI(`search?part=snippet,id&q=${searchTerm}`).then((data) => {
       setVideos(data.items);
     });
   }, [searchTerm]);
